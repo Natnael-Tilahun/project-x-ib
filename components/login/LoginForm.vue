@@ -39,10 +39,10 @@ const onSubmit = form.handleSubmit(async (values: any) => {
 <template>
   <div :class="cn('grid gap-6', $attrs.class ?? '')">
     <form @submit="onSubmit">
-      <div class="grid gap-3">
+      <div class="grid gap-6">
         <FormField v-slot="{ componentField }" name="email">
           <FormItem>
-            <FormLabel> Username or Email</FormLabel>
+            <FormLabel> User ID</FormLabel>
             <FormControl>
               <UiInput
                 type="email"
@@ -70,43 +70,31 @@ const onSubmit = form.handleSubmit(async (values: any) => {
           </FormItem>
         </FormField>
 
-        <div class="grid pb-3">
-          <NuxtLink
-            to="/forgotPassword"
-            class="text-primary text-right text-sm"
-          >
-            Forgot Password?
-          </NuxtLink>
-        </div>
-        <UiButton class="hover:bg-fuchsia-700" :disabled="isLoading">
+        <FormField v-slot="{ componentField }" name="otp">
+          <FormItem>
+            <FormLabel>OTP</FormLabel>
+            <FormControl>
+              <UiInput
+                type="text"
+                placeholder="1234"
+                v-bind="componentField"
+                :disabled="isLoading"
+              />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        </FormField>
+
+        <UiButton class="hover:bg-fuchsia-700 text-lg" :disabled="isLoading">
           <Icon
             name="svg-spinners:8-dots-rotate"
             v-if="isLoading"
             class="mr-2 h-4 w-4 animate-spin"
           ></Icon>
 
-          Sign In with Email
+          Login
         </UiButton>
       </div>
     </form>
-    <div class="relative">
-      <div class="absolute inset-0 flex items-center">
-        <span class="w-full border-t" />
-      </div>
-      <div class="relative flex justify-center text-xs uppercase">
-        <span class="bg-background px-2 text-muted-foreground">
-          Or continue with
-        </span>
-      </div>
-    </div>
-    <UiButton variant="outline" type="button" :disabled="isLoading">
-      <Icon
-        name="svg-spinners:8-dots-rotate"
-        v-if="isLoading"
-        class="mr-2 h-4 w-4 animate-spin"
-      ></Icon>
-      <Icon name="mdi:google" v-else class="mr-2 h-4 w-4"></Icon>
-      Google
-    </UiButton>
   </div>
 </template>
