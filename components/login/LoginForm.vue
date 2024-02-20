@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { cn } from "@/lib/utils";
-import { useForm } from "vee-validate";
+// import { useForm } from "vee-validate";
 import {
   FormControl,
   FormField,
@@ -10,13 +10,12 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { customerLoginFormSchema } from "~/validations/customerLoginFormSchema";
+import { useForm } from "vee-validate";
 const store = useAuthStore();
 
 const isLoading = ref(false);
 
-const form = useForm({
-  validationSchema: customerLoginFormSchema,
-});
+const form = useForm();
 
 const onSubmit = form.handleSubmit(async (values: any) => {
   isLoading.value = true;

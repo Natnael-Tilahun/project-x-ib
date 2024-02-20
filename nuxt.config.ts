@@ -3,6 +3,9 @@ export default defineNuxtConfig({
   // nitro: {
   //   preset: "vercel",
   // },
+  // typescript: {
+  //   strict: true,
+  // },
   devtools: {
     enabled: true,
     timeline: {

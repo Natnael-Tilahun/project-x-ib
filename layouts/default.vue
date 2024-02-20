@@ -38,6 +38,53 @@ const route = useRoute();
     <div class="space-y-10 py-6 md:px-0 md:py-0 h-full">
       <slot />
     </div>
+
+    <!-- Footer -->
+    <div class="col-span-full">
+      <div
+        class="grid lg:grid-cols-4 gap-y-10 grid-cols-2 xl:p-24 gap-4 p-8 md:p-8 lg:p-16 w-full col-span-full"
+      >
+        <div class="flex flex-col md:px-4 gap-4 lg:gap-8">
+          <h1 class="lg:text-2xl text-lg font-bold">Get In Touch</h1>
+          <p class="text-secondary-foreground font-medium text-sm">
+            Follow our social media channels
+          </p>
+          <div class="flex items-center gap-4 lg:gap-8">
+            <Icons.facebook class="stroke-none" />
+            <Icons.twitter class="stroke-none" />
+            <Icons.youtube class="stroke-none" />
+            <Icons.telegram class="stroke-none" />
+          </div>
+        </div>
+        <div class="flex md:px-4 flex-col gap-4 lg:gap-8">
+          <h1 class="lg:text-2xl text-lg font-bold">Company info</h1>
+          <ul class="flex flex-col gap-4 lg:gap-6 font-semibold">
+            <li class="text-secondary-foreground text-sm">About Us</li>
+            <li class="text-secondary-foreground text-sm">Vacancy</li>
+            <li class="text-secondary-foreground text-sm">Tenders</li>
+            <li class="text-secondary-foreground text-sm">FAQ</li>
+          </ul>
+        </div>
+        <div class="flex md:px-4 flex-col gap-4 lg:gap-8">
+          <h1 class="lg:text-2xl font-bold">Services</h1>
+          <ul class="flex flex-col gap-4 lg:gap-6 font-semibold">
+            <li class="text-secondary-foreground text-sm">Branch Locator</li>
+            <li class="text-secondary-foreground text-sm">ATM Locator</li>
+            <li class="text-secondary-foreground text-sm">Exchange Rates</li>
+            <li class="text-secondary-foreground text-sm">Customer Feedback</li>
+          </ul>
+        </div>
+        <div class="flex md:px-4 flex-col gap-4 lg:gap-8">
+          <Icons.appStore />
+          <Icons.googlePlay />
+        </div>
+      </div>
+      <div
+        class="bg-secondary w-full col-span-full font-semibold flex items-center justify-center p-8"
+      >
+        <p>@2024 | Commercial Bank of Ethiopia.</p>
+      </div>
+    </div>
   </div>
 </template>
 <style scoped>

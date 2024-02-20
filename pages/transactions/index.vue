@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
-import {
-  columns,
-  type TransactionLogs,
-} from "~/components/transactions/columns";
+definePageMeta({
+  layout: "auth-layout",
+});
+const data = ref<{}[]>([]);
 
-const data = ref<TransactionLogs[]>([]);
-
-async function getData(): Promise<TransactionLogs[]> {
+async function getData(): Promise<{}[]> {
   // Fetch data from your API here.
   return [
     {
@@ -279,22 +277,21 @@ onMounted(async () => {
 });
 </script>
 
-<!-- Render DataTable only if data is available -->
 <template>
-  <div v-if="data.length > 0" class="flex flex-col space-y-3 mx-auto">
-    <UiButton class="w-fit self-end px-5 bg-primary hover:bg-fuchsia-800"
-      ><Icon name="material-symbols:download" size="24" class="mr-2"></Icon
-      >Download List</UiButton
+  <div class="w-full grid gap-10 grid-cols-1 md:grid-cols-5 p-8 h-full">
+    <div
+      class="space-y-10 flex flex-col md:col-span-3 justify-between items-baseline h-full"
     >
-
-    <UiDataTable :columns="columns" :data="data">
-      <template v-slot:toolbar="{ table }">
-        <TransactionsDataTableFilterbar :table="table" />
-      </template>
-    </UiDataTable>
-  </div>
-  <div v-else class="py-10 flex justify-center w-full">
-    <UiLoading />
+      <!-- Account list and balance -->
+      <TransactionsTransactionList />
+    </div>
+    <div
+      class="w-full place-items-center col-span-full md:col-span-2 flex flex-col gap-7 md:items-end"
+    >
+      <!--  Transactions Overview -->
+      <TransactionsStatistics />
+    </div>
   </div>
 </template>
-~/components/transactions/columns
+
+<style lang="postcss" scoped></style>

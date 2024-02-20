@@ -9,6 +9,10 @@ import {
 } from "@/components/ui/form";
 import { settingsFormSchema } from "~/validations/settingsFormSchema";
 
+definePageMeta({
+  layout: "auth-layout",
+});
+
 const isLoading = ref(false);
 
 const form = useForm({
@@ -25,13 +29,13 @@ const onSubmit = form.handleSubmit((values: any) => {
 </script>
 
 <template>
-  <div class="w-full flex flex-col gap-8">
+  <div class="w-full flex flex-col gap-10 min-h-[calc(100vh-300px)] max-h-full">
     <div class="pb-4">
       <h1 class="md:text-2xl text-lg font-medium">Settings</h1>
       <p class="text-sm text-muted-foreground">Update your settings here</p>
     </div>
 
-    <UiCard class="p-6">
+    <UiCard class="p-6 h-full">
       <form @submit="onSubmit">
         <div class="grid grid-cols-2 gap-6">
           <FormField v-slot="{ componentField }" name="currentPassword">
