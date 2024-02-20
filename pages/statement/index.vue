@@ -377,7 +377,6 @@ function printFacture() {
 
   let componentWidth = component.offsetWidth;
   let screenHeight = window.screen.height;
-  alert(componentWidth);
   let doc = new jsPDF({
     orientation: "landscape",
     unit: "px",
