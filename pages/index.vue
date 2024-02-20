@@ -25,9 +25,12 @@ const route = useRoute();
           Digital Era.
         </p>
         <div class="flex gap-2.5">
-          <UiButton size="lg" class="font-bold rounded-full">
-            Register Now
-          </UiButton>
+          <NuxtLink to="/auth/register">
+            <UiButton size="lg" class="font-bold rounded-full">
+              Register Now
+            </UiButton>
+          </NuxtLink>
+
           <UiButton
             variant="ghost"
             size="lg"

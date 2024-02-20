@@ -12,6 +12,10 @@ definePageMeta({
 });
 
 const handleBackButton = () => history.back();
+const isSuccessful = ref(false);
+const handleSuccess = () => {
+  isSuccessful.value = !isSuccessful.value;
+};
 </script>
 
 <template>
@@ -46,9 +50,9 @@ const handleBackButton = () => history.back();
           Enter Your Mobile Banking Service Activated Phone
         </h3>
       </div> -->
-      <RegisterSuccess />
+      <RegisterSuccess v-if="isSuccessful" />
 
-      <!-- <RegisterForm class="w-full" /> -->
+      <RegisterForm v-else class="w-full" :handleSuccess="handleSuccess" />
     </div>
   </div>
 </template>

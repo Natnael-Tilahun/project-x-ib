@@ -16,6 +16,11 @@ import {
 import { customerLoginFormSchema } from "~/validations/customerLoginFormSchema";
 const store = useAuthStore();
 
+const props = defineProps<{
+  handleSuccess: () => void; // Define handleSuccess as a function prop
+}>();
+const emit: any = undefined; // Define emit as any
+
 const isLoading = ref(false);
 
 const phone = ref("");
@@ -29,17 +34,20 @@ const updateSelectedCountry = (country: any) => {
 };
 
 const onSubmit = form.handleSubmit(async (values: any) => {
-  isLoading.value = true;
-  const { body }: any = await $fetch("/api/login", {
-    method: "post",
-    body: values,
-  }).catch((err) => {
-    console.log(err);
-    isLoading.value = false;
-  });
-  store.email = body.email;
+  // isLoading.value = true;
+  // const { body }: any = await $fetch("/api/login", {
+  //   method: "post",
+  //   body: values,
+  // }).catch((err) => {
+  //   console.log(err);
+  //   isLoading.value = false;
+  // });
+  // Emitting handleSuccess event
+  props.handleSuccess();
+
+  // store.email = body.email;
   // setTimeout(() => {
-  isLoading.value = false;
+  // isLoading.value = false;
   //   navigateTo("/");
   // }, 3000);
 });

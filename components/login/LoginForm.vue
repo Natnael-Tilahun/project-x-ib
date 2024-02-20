@@ -30,7 +30,7 @@ const onSubmit = form.handleSubmit(async (values: any) => {
   store.email = body.email;
   // setTimeout(() => {
   isLoading.value = false;
-  navigateTo("/");
+  navigateTo("/accounts");
   // }, 3000);
 });
 </script>
