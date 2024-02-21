@@ -161,7 +161,7 @@ const handleNavigation = (path: string) => {
       <div
         class="grid lg:grid-cols-4 gap-y-10 grid-cols-2 xl:p-24 gap-4 p-8 md:p-8 lg:p-16 w-full col-span-full"
       >
-        <div class="flex flex-col md:px-4 gap-4 lg:gap-8">
+        <div class="flex flex-col md:px-4 gap-4">
           <h1 class="lg:text-2xl text-lg font-bold">Get In Touch</h1>
           <p class="text-secondary-foreground font-medium text-sm">
             Follow our social media channels
@@ -173,25 +173,25 @@ const handleNavigation = (path: string) => {
             <Icons.telegram class="stroke-none" />
           </div>
         </div>
-        <div class="flex md:px-4 flex-col gap-4 lg:gap-8">
+        <div class="flex md:px-4 flex-col gap-4">
           <h1 class="lg:text-2xl text-lg font-bold">Company info</h1>
-          <ul class="flex flex-col gap-4 lg:gap-6 font-semibold">
+          <ul class="flex flex-col gap-4 font-semibold">
             <li class="text-secondary-foreground text-sm">About Us</li>
             <li class="text-secondary-foreground text-sm">Vacancy</li>
             <li class="text-secondary-foreground text-sm">Tenders</li>
             <li class="text-secondary-foreground text-sm">FAQ</li>
           </ul>
         </div>
-        <div class="flex md:px-4 flex-col gap-4 lg:gap-8">
+        <div class="flex md:px-4 flex-col gap-4">
           <h1 class="lg:text-2xl font-bold">Services</h1>
-          <ul class="flex flex-col gap-4 lg:gap-6 font-semibold">
+          <ul class="flex flex-col gap-4 font-semibold">
             <li class="text-secondary-foreground text-sm">Branch Locator</li>
             <li class="text-secondary-foreground text-sm">ATM Locator</li>
             <li class="text-secondary-foreground text-sm">Exchange Rates</li>
             <li class="text-secondary-foreground text-sm">Customer Feedback</li>
           </ul>
         </div>
-        <div class="flex md:px-4 flex-col gap-4 lg:gap-8">
+        <div class="flex md:px-4 flex-col gap-4 lg:gap-6">
           <Icons.appStore />
           <Icons.googlePlay />
         </div>
