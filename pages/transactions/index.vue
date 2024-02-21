@@ -278,7 +278,9 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="w-full grid gap-10 grid-cols-1 md:grid-cols-5 p-8 h-full">
+  <div
+    class="w-full grid gap-10 grid-cols-1 md:grid-cols-5 md:py-8 py-6 px-2 h-full"
+  >
     <div
       class="space-y-10 flex flex-col md:col-span-3 justify-between items-baseline h-full"
     >

@@ -10,9 +10,51 @@ const route = useRoute();
   <div class="bg-background min-h-screen w-full">
     <!-- Header -->
     <div
-      class="w-full h-16 lg:h-24 border-b-[1px] bg-background text-secondary-foreground flex justify-between items-center px-4 md:px-8 lg:px-16 print-hide"
+      class="w-full h-16 lg:h-20 border-b-[1px] bg-background text-secondary-foreground gap-6 flex justify-between items-center px-6 md:px-8 lg:px-16"
     >
-      <img src="/cbe-logo.png" class="w-40" alt="Logo" />
+      <img src="/cbe-logo.png" class="w-40 hidden md:block" alt="Logo" />
+
+      <!-- Mobile Menu -->
+      <UiSheet class="md:hidden">
+        <UiSheetTrigger>
+          <Icons.menu class="w-6 h-6 md:hidden" />
+        </UiSheetTrigger>
+        <UiSheetContent side="left">
+          <ul
+            class="flex flex-col py-0 gap-6 lg:gap-8 text-[#AFAFAF] font-medium text-base"
+          >
+            <img src="/cbe-logo.png" class="w-fit" alt="Logo" />
+
+            <NuxtLink class="flex gap-2 items-center w-full" to="/accounts"
+              ><Icons.accounts class="w-4 h-4" /> Accounts</NuxtLink
+            >
+            <NuxtLink class="flex gap-2 items-center w-full" to="/transactions">
+              <Icons.transactions class="w-4 h-4" /> Transactions</NuxtLink
+            >
+            <NuxtLink class="flex gap-2 items-center w-full" to="/statement"
+              ><Icons.statement class="w-4 h-4" /> Statement</NuxtLink
+            >
+            <NuxtLink class="flex gap-2 items-center w-full" to="/activity">
+              <Icons.activity class="w-4 h-4" /> Activity</NuxtLink
+            >
+            <UiSelect default-value="English">
+              <UiSelectTrigger class="w-full">
+                <UiSelectValue placeholder="Language" />
+              </UiSelectTrigger>
+              <UiSelectContent>
+                <UiSelectGroup>
+                  <UiSelectItem value="English"> English </UiSelectItem>
+                  <UiSelectItem value="Amharic"> Amharic </UiSelectItem>
+                  <UiSelectItem value="Oromic"> Oromic </UiSelectItem>
+                  <UiSelectItem value="Tigray"> Tigray </UiSelectItem>
+                </UiSelectGroup>
+              </UiSelectContent>
+            </UiSelect>
+          </ul>
+        </UiSheetContent>
+      </UiSheet>
+
+      <!-- Large Screen Menu -->
       <ul
         class="md:flex hidden flex-row gap-2.5 lg:gap-8 text-[#AFAFAF] font-medium text-base"
       >
@@ -29,9 +71,10 @@ const route = useRoute();
           <Icons.activity class="w-4 h-4" /> Activity</NuxtLink
         >
       </ul>
+
       <div class="flex items-center gap-5">
         <UiSelect default-value="English">
-          <UiSelectTrigger class="w-[100px]">
+          <UiSelectTrigger class="w-[100px] hidden md:flex">
             <UiSelectValue placeholder="Language" />
           </UiSelectTrigger>
           <UiSelectContent>
@@ -63,7 +106,7 @@ const route = useRoute();
     </div>
 
     <!-- Page Main Content -->
-    <div class="space-y-10 h-full p-8 px-4 md:px-8 lg:px-16 printable">
+    <div class="space-y-10 h-full md:py-8 px-4 md:px-8 lg:px-16">
       <slot />
     </div>
 
@@ -90,6 +133,6 @@ const route = useRoute();
 </template>
 <style scoped>
 .router-link-active {
-  @apply text-background p-2 rounded-lg bg-primary;
+  @apply text-background p-2 rounded-lg bg-primary w-full;
 }
 </style>

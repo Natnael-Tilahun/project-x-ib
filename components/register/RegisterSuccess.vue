@@ -21,10 +21,10 @@ const isLoading = ref(false);
     </p>
   </div>
   <UiButton
-    size="lg"
-    class="hover:bg-fuchsia-800 font-light tracking-wider gap-10 w-full text-xl rounded-xl h-14"
+    size=""
+    class="hover:bg-fuchsia-800 font-light tracking-wider gap-4 md:gap-10 w-full text-xs md:text-xl rounded-xl h-14"
   >
     Check Near By CBE Branches on Map
-    <Icons.ping />
+    <Icons.ping class="w-4 h-4" />
   </UiButton>
 </template>

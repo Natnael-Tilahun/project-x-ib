@@ -3,7 +3,7 @@ import { Icons } from "../icons";
 </script>
 
 <template>
-  <UiCard class="col-span-1 p-8 border- space-y-6 md:w-[90%]">
+  <UiCard class="col-span-1 md:p-8 p-6 border- space-y-6 w-full md:w-[90%]">
     <h1 class="font-semibold text-xl">Applications</h1>
     <div class="inline-grid md:grid-cols-4 grid-cols-2 gap-5 w-full">
       <UiCard

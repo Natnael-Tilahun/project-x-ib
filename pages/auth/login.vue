@@ -13,26 +13,28 @@ const handleBackButton = () => history.back();
 </script>
 
 <template>
-  <div class="h-screen flex flex-col items-center justify-center">
+  <div class="min-h-screen flex flex-col items-center justify-center">
     <!-- Header -->
     <div
-      class="w-full h-20 border-b-[1px] flex items-center justify-between px-8"
+      class="w-full h-16 border-b-[1px] flex items-center justify-between px-8"
     >
-      <NuxtLink @click="handleBackButton" class="flex gap-2"
+      <NuxtLink @click="handleBackButton" class="flex gap-2 text-base"
         ><Icons.leftArrow /> Back
       </NuxtLink>
-      <NuxtLink to="/auth/register" class="text-xl">
+      <NuxtLink to="/auth/register" class="md:text-xl">
         Create an account
       </NuxtLink>
     </div>
 
     <!-- Body -->
     <div
-      class="flex h-full space-y-4 md:space-y-0 flex-col w-full items-center justify-between p-10"
+      class="flex h-full space-y-4 md:space-y-0 flex-col w-full items-center justify-between px-10 py-5 md:p-10"
     >
       <div class="md:space-y-8 space-y-2">
         <img src="/cbe-logo2.png" alt="CBE Logo" />
-        <h1 class="text-4xl font-medium text-center tracking-tight">Log in</h1>
+        <h1 class="md:text-4xl text-2xl font-medium text-center tracking-tight">
+          Log in
+        </h1>
       </div>
 
       <div
@@ -87,7 +89,7 @@ const handleBackButton = () => history.back();
       </div>
 
       <!-- Footer -->
-      <div class="flex flex-col self-center gap-4 md:gap-8 text-center">
+      <div class="flex flex-col h-fit self-center gap-4 md:gap-8 text-center">
         <NuxtLink
           to="/forgotPassword"
           class="text-primary font-medium underline"

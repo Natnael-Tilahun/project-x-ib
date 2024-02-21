@@ -45,7 +45,7 @@ interface Transaction {
   toAccountNumber: string;
   toAccountBalance: string;
   depositAmount?: number;
-  withdrawalAmount?: number;
+  amount?: number;
   transactionDate: string;
   transactionCurrency: string;
   serviceCharge: string;
@@ -377,17 +377,34 @@ function printFacture() {
 
   let componentWidth = component.offsetWidth;
   let screenHeight = window.screen.height;
-  let doc = new jsPDF({
-    orientation: "landscape",
-    unit: "px",
-    format: [componentWidth, screenHeight],
-    compress: true,
-  });
+  let screenWidth = window.screen.width;
+  let doc: any = "";
+
+  if (screenWidth <= 1200) {
+    component.style.width = "1500px";
+    doc = new jsPDF({
+      orientation: "landscape",
+      unit: "px",
+      format: [1200, screenHeight],
+      compress: true,
+    });
+  } else {
+    doc = new jsPDF({
+      orientation: "landscape",
+      unit: "px",
+      format: [componentWidth, screenHeight],
+      compress: true,
+    });
+  }
+
+  // alert(componentWidth);
+
   // let component: HTMLElement = <HTMLElement>document.getElementById("facture");
   doc.html(component, {
     margin: [10, 0, 50, 0],
-    callback: function (doc) {
+    callback: function (doc: any) {
       doc.save(`Account Statement.pdf`);
+      component.style.width = "";
     },
     x: 0,
     y: 0,
@@ -397,9 +414,9 @@ function printFacture() {
 </script>
 
 <template>
-  <div class="w-full p-8 h-full space-y-6">
+  <div class="w-full md:p-8 py-8 h-full space-y-6">
     <UiSelect v-model="account">
-      <UiSelectTrigger class="w-1/3 h-14 rounded-xl">
+      <UiSelectTrigger class="md:w-1/3 w-full md:h-14 md:rounded-xl">
         <UiSelectValue class="text-slate-400" placeholder="Select account" />
       </UiSelectTrigger>
       <UiSelectContent>
@@ -415,18 +432,18 @@ function printFacture() {
       </UiSelectContent>
     </UiSelect>
     <div class="space-y-8">
-      <div class="space-y-2">
+      <div class="md:space-y-2 space-y-3">
         <h1 class="text-foreground text-base font-normal">
           Select Statement Duration
         </h1>
-        <div class="flex gap-24 items-center">
+        <div class="flex flex-col md:flex-row md:gap-24 gap-4 w-full">
           <UiPopover>
             <UiPopoverTrigger as-child>
               <UiButton
                 :variant="'outline'"
                 :class="
                   cn(
-                    'w-fit rounded-lg justify-start text-left font-medium text-base',
+                    'md:w-fit w-full rounded-lg justify-start text-left font-medium text-base',
                     !startDate && 'text-secondary-foreground'
                   )
                 "
@@ -448,7 +465,7 @@ function printFacture() {
                 :variant="'outline'"
                 :class="
                   cn(
-                    'w-fit rounded-lg justify-start text-left font-medium text-base mr-auto',
+                    'md:w-fit w-full rounded-lg justify-start text-left font-medium text-base mr-auto',
                     !endDate && 'text-secondary-foreground'
                   )
                 "
@@ -474,13 +491,15 @@ function printFacture() {
       <!-- Account Statement -->
       <div
         id="facture"
-        class="bg-[#FCFCFC] w-full py-4 px-7 print:bg-green-500"
+        class="bg-[#FCFCFC] md:space-y-2 w-full py-4 md:px-7 px-4"
       >
-        <div class="flex justify-between">
-          <img src="/cbe-logo.png" class="w-64 h-fit" alt="Logo" />
-          <div class="space-y-2">
-            <h1 class="text-2xl">Account Statement</h1>
-            <div class="flex items-center text-accent gap-4 tracking-wider">
+        <div class="flex flex-col md:flex-row gap-2 justify-between">
+          <img src="/cbe-logo.png" class="md:w-fit h-fit" alt="Logo" />
+          <div class="md:space-y-2 space-y-0 flex flex-col md:items-center">
+            <h1 class="md:text-2xl text-sm">Account Statement</h1>
+            <div
+              class="flex items-center text-accent text-xs md:text-base gap-4 tracking-wider"
+            >
               <p class="">
                 From :
                 {{ startDate ? startDate?.toLocaleDateString() : "DD/MM/YYYY" }}
@@ -491,10 +510,14 @@ function printFacture() {
               </p>
             </div>
           </div>
-          <p>Date: {{ new Date().toLocaleDateString() }}</p>
+          <p class="md:text-base w-fit text-xs">
+            Date: {{ new Date().toLocaleDateString() }}
+          </p>
         </div>
 
-        <div class="space-y-2 px-12 py-6 lg:w-1/3 md:w-1/2 w-full max-w-full">
+        <div
+          class="space-y-2 md:px-6 py-6 xl:w-1/3 text-xs md:text-sm md:w-1/2 w-full max-w-full"
+        >
           <div class="grid grid-cols-2 w-full gap-4">
             <p class="font-bold">Account Holder Name:</p>
             <p>{{ selectedAccount?.accountName }}</p>
@@ -517,30 +540,38 @@ function printFacture() {
           <UiTableHeader>
             <UiTableRow>
               <UiTableHead class="w-[100px]"> # </UiTableHead>
-              <UiTableHead class="uppercase font-semibold text-sm"
+              <UiTableHead class="uppercase font-semibold text-xs md:text-sm"
                 >Transaction ID</UiTableHead
               >
-              <UiTableHead class="uppercase font-semibold text-sm"
+              <UiTableHead class="uppercase font-semibold md:text-sm text-xs"
                 >Details</UiTableHead
               >
-              <UiTableHead class="text-right uppercase font-semibold text-sm">
+              <UiTableHead
+                class="text-right uppercase font-semibold md:text-sm text-xs"
+              >
                 TXN Type
               </UiTableHead>
-              <UiTableHead class="text-right uppercase font-semibold text-sm">
+              <UiTableHead
+                class="text-right uppercase font-semibold md:text-sm text-xs"
+              >
                 Amount
               </UiTableHead>
-              <UiTableHead class="text-right uppercase font-semibold text-sm">
+              <UiTableHead
+                class="text-right uppercase font-semibold md:text-sm text-xs"
+              >
                 Date
               </UiTableHead>
             </UiTableRow>
           </UiTableHeader>
-          <UiTableBody>
+          <UiTableBody class="md:text-sm text-xs">
             <UiTableRow
               v-for="(transaction, index) in filteredTransactions"
               :key="index"
             >
-              <UiTableCell class="font-medium"> {{ index }} </UiTableCell>
-              <UiTableCell class="font-medium text-sm uppercase">
+              <UiTableCell class="font-medium md:text-sm text-xs">
+                {{ index }}
+              </UiTableCell>
+              <UiTableCell class="font-medium md:text-sm text-xs uppercase">
                 <div>
                   <p class="">{{ transaction.id }}</p>
                   <p
@@ -566,14 +597,14 @@ function printFacture() {
                   v-if="transaction.typeId == 'Deposit'"
                   class="text-[#2DD683]"
                 >
-                  + {{ transaction.amount }}
+                  + {{ transaction?.amount }}
                 </p>
 
                 <p
                   v-if="transaction.typeId == 'Withdrawal'"
                   class="text-[#E74A51]"
                 >
-                  - {{ transaction.amount }}
+                  - {{ transaction?.amount }}
                 </p>
               </UiTableCell>
               <UiTableCell class="text-right">

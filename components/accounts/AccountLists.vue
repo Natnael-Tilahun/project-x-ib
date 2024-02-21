@@ -120,49 +120,54 @@ watchOnce(api, (api) => {
 </script>
 
 <template>
-  <div class="w-full col-span-1 h-fit bg-[url('/backgroundMap.png')]">
+  <div
+    class="w-full col-span-1 h-fit bg-[url('/backgroundMap.png')] bg-center p-8 md:p-0"
+  >
     <UiCarousel class="w-full flex" @init-api="setApi">
       <UiCarouselContent>
         <!-- Iterate over accounts array -->
         <UiCarouselItem
-          class="h-96 flex flex-col items-center justify-center md:p-6"
+          class="md:h-96 flex flex-col md:items-center h-60 justify-center md:p-6"
           v-for="(account, index) in accounts"
           :key="index"
         >
-          <CardContent class="space-y-16">
+          <div class="md:space-y-16 space-y-10">
             <div class="flex flex-col gap-2 justify-center items-center">
-              <h1 class="text-2xl font-semibold text-foreground">
+              <h1 class="md:text-2xl text-lg font-semibold text-foreground">
                 Selected Account
               </h1>
-              <div class="text-center items-center flex md:gap-16">
-                <h1 class="text-2xl text-primary font-semibold tracking-wide">
+              <div class="text-center items-center flex gap-4 md:gap-16">
+                <h1
+                  class="md:text-2xl text-lg text-primary font-semibold tracking-wide"
+                >
                   {{ account.productId }} -
                   {{ formatAccountNumber(account.accountId) }}
                   <!-- {{ account.accountId.substring(0, 4) }}***** -->
                 </h1>
                 <Icons.hide
-                  class="w-7 h-7"
+                  class="md:w-7 md:h-7 w-5 h-5"
                   @click="toggleAccountIdVisibility"
                 />
               </div>
             </div>
 
-            <div class="flex gap-4 md:gap-20">
-              <div class="space-y-1">
-                <p class="text-base font-semibold text-accent">
+            <div class="flex w-full gap-4 md:gap-20">
+              <div class="md:space-y-1">
+                <p class="md:text-base text-sm font-semibold text-accent">
                   Available Balance
                 </p>
-                <div class="flex items-center gap-10">
-                  <p class="text-xl font-semibold">
+                <div class="flex items-center gap-4 md:gap-10">
+                  <p class="md:text-xl text-base font-semibold">
                     {{
                       formatAvailableBalance(
                         account.availableBalance,
                         showFullAvailableBalance
                       )
-                    }}{{ account.currencyCode }}
+                    }}
+                    {{ account.currencyCode }}
                   </p>
                   <Icons.hide
-                    class="w-7 h-7"
+                    class="md:w-7 md:h-7 w-5 h-5"
                     @click="
                       toggleAvailableBalanceVisibility(
                         'showFullAvailableBalance'
@@ -177,10 +182,12 @@ watchOnce(api, (api) => {
                 orientation="vertical"
               />
 
-              <div class="space-y-1">
-                <p class="text-base font-semibold text-accent">Locked Amount</p>
-                <div class="flex items-center md:gap-10">
-                  <p class="text-xl font-semibold">
+              <div class="md:space-y-1">
+                <p class="md:text-base text-sm font-semibold text-accent">
+                  Locked Amount
+                </p>
+                <div class="flex items-center gap-4 md:gap-10">
+                  <p class="md:text-xl text-base font-semibold">
                     {{
                       formatAvailableBalance(
                         account.currentBalance,
@@ -190,7 +197,7 @@ watchOnce(api, (api) => {
                     {{ account.currencyCode }}
                   </p>
                   <Icons.hide
-                    class="w-7 h-7"
+                    class="md:w-7 md:h-7 w-5 h-5"
                     @click="
                       toggleAvailableBalanceVisibility('showFullCurrentBalance')
                     "
@@ -198,7 +205,7 @@ watchOnce(api, (api) => {
                 </div>
               </div>
             </div>
-          </CardContent>
+          </div>
         </UiCarouselItem>
       </UiCarouselContent>
       <UiCarouselPrevious />

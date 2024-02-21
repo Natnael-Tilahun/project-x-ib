@@ -99,7 +99,7 @@ const transactions: any = [
 </script>
 
 <template>
-  <UiCard class="p-6 space-y-8 w-full">
+  <UiCard class="md:p-6 p-6 space-y-8 w-full">
     <div
       class="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8"
     >

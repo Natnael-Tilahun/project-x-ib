@@ -55,7 +55,9 @@ const onSubmit = form.handleSubmit(async (values: any) => {
 
 <template>
   <div class="space-y-4 w-full">
-    <h1 class="text-2xl md:text-4xl font-medium text-center tracking-wide">
+    <h1
+      class="text-2xl md:text-4xl uppercase font-medium text-center tracking-wide"
+    >
       Sign UP
     </h1>
     <p class="md:text-lg text-sm tracking-wide text-secondary-foreground">
@@ -71,16 +73,16 @@ const onSubmit = form.handleSubmit(async (values: any) => {
     </h3>
     <div :class="cn('grid ', $attrs.class ?? '')">
       <form @submit="onSubmit">
-        <div class="grid gap-12">
+        <div class="grid gap-6 md:gap-12">
           <vue-tel-input
-            class="h-14"
+            class="md:h-14 h-10"
             @country-changed="updateSelectedCountry"
             v-model="phone"
           ></vue-tel-input>
           <!-- {{ countries }} -->
           <UiButton
-            size="lg"
-            class="hover:bg-fuchsia-700 text-xl rounded-xl h-14"
+            size=""
+            class="hover:bg-fuchsia-700 md:text-xl uppercase md:rounded-xl md:h-14"
             :disabled="isLoading"
           >
             <Icon

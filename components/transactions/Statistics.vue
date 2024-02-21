@@ -135,13 +135,13 @@ const transactions: any = [
     <div
       class="flex flex-col md:flex-row md:h-40 items-center gap-4 md:gap-10 w-full md:px-10"
     >
-      <div class="md:w-1/4 w-1/2 h-fit">
-        <VisSingleContainer class="" :data="data">
+      <div class="md:w-1/4 h-fit">
+        <VisSingleContainer class="h-40 w-full" :data="data">
           <VisDonut :value="value" />
         </VisSingleContainer>
       </div>
 
-      <ul class="flex flex-col gap-2 w-full">
+      <ul class="flex flex-col gap-2 py-4 md:py-0 w-full">
         <li class="flex items-center gap-4">
           <UiBadge class="rounded-full bg-primary w-2 mx-2 p-1 h-1"></UiBadge>
           Mobile Transfer
