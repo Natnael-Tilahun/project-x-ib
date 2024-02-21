@@ -7,10 +7,10 @@ const route = useRoute();
 
 <template>
   <div
-    class="flex flex-col h-fit md:h-screen xl:h-full w-full md:justify-evenly"
+    class="flex flex-col h-fit lg:h-screen xl:h-full w-full lg:justify-evenly"
   >
     <div
-      class="md:grid flex flex-col gap-28 lg:gap-20 xl:gap-40 p-8 py-20 md:py-16 lg:p-20 xl:p-32 lg:py-32 h-fit md:h-full xl:py-20 xl:h-screen lg:grid-rows-6 grid-cols-1 md:grid-cols-2"
+      class="md:grid flex flex-col gap-28 lg:gap-20 xl:gap-40 p-8 py-20 md:py-40 lg:p-20 xl:p-32 lg:py-32 h-fit md:h-full xl:py-20 xl:h-screen lg:grid-rows-6 grid-cols-1 md:grid-cols-2"
     >
       <div
         class="flex flex-col md:h-full h-fit order-last md:order-first md:row-start-2 row-span-full gap-6 lg:gap-10"
@@ -29,17 +29,17 @@ const route = useRoute();
           </p>
         </div>
 
-        <div class="flex gap-2.5">
+        <div class="flex gap-2.5 md:gap-6">
           <NuxtLink to="/auth/register">
-            <UiButton size="lg" class="font-bold rounded-full">
+            <UiButton size="" class="font-bold lg:rounded-full">
               Register Now
             </UiButton>
           </NuxtLink>
 
           <UiButton
             variant="ghost"
-            size="lg"
-            class="font-bold border-primary border-[1px] rounded-full"
+            size=""
+            class="font-bold border-primary border-[1px] lg:rounded-full"
           >
             Learn More
           </UiButton>
@@ -47,7 +47,7 @@ const route = useRoute();
       </div>
 
       <div
-        class="md:relative flex flex-col justify-center md:justify-start items-center md:items-start md:row-span-full lg:row-start-1 w-full h-60 md:h-full"
+        class="md:relative flex flex-col justify-center lg:justify-start items-center md:items-start md:row-span-full lg:row-start-1 w-full h-60 md:h-full"
       >
         <img src="/spiralsvg.png" class="absolute z-0 h-96 md:h-fit" alt="" />
         <img

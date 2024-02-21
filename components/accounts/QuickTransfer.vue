@@ -34,7 +34,7 @@ const onSubmit = form.handleSubmit(async (values: any) => {
 </script>
 
 <template>
-  <UiCard class="col-span-1 md:p-8 p-6 space-y-6 w-full md:w-2/3">
+  <UiCard class="col-span-1 md:p-8 p-6 space-y-6 w-full lg:w-2/3">
     <h1 class="font-semibold text-xl">Quick Transfer</h1>
     <form @submit="onSubmit">
       <div class="grid gap-6">

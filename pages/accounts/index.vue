@@ -7,7 +7,9 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="w-full grid gap-20 grid-cols-1 md:grid-cols-2 md:px-8">
+  <div
+    class="w-full grid md:gap-4 lg:gap-20 grid-cols-1 md:grid-cols-2 lg:px-8"
+  >
     <div class="space-y-10 flex flex-col justify-between items-baseline h-full">
       <!-- Account list and balance -->
       <AccountsAccountLists />

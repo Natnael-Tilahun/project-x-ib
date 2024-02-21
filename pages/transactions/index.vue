@@ -279,16 +279,16 @@ onMounted(async () => {
 
 <template>
   <div
-    class="w-full grid gap-10 grid-cols-1 md:grid-cols-5 md:py-8 py-6 px-2 h-full"
+    class="w-full grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-5 md:py-8 py-6 px-2 h-full"
   >
     <div
-      class="space-y-10 flex flex-col md:col-span-3 justify-between items-baseline h-full"
+      class="space-y-10 flex flex-col md:col-span-1 lg:col-span-3 justify-between items-baseline h-full"
     >
       <!-- Account list and balance -->
       <TransactionsTransactionList />
     </div>
     <div
-      class="w-full place-items-center col-span-full md:col-span-2 flex flex-col gap-7 md:items-end"
+      class="w-full place-items-center col-span-full md:col-span-1 lg:col-span-2 flex flex-col gap-7 md:items-end"
     >
       <!--  Transactions Overview -->
       <TransactionsStatistics />

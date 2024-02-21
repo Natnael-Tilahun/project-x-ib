@@ -109,13 +109,13 @@ const transactions: any = [
 
 <template>
   <UiCard class="p-6 space-y-8 w-full text-[#AFAFAF]">
-    <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+    <div class="flex flex-col lg:flex-row items-center gap-4 lg:gap-8">
       <h1 class="font-semibold text-xl mr-auto text-foreground">
         Transaction Statistics
       </h1>
 
       <UiSelect default-value="1">
-        <UiSelectTrigger class="md:w-[200px] w-full">
+        <UiSelectTrigger class="lg:w-[200px] w-full">
           <div class="flex gap-2">
             <Icons.calender />
             <UiSelectValue placeholder="Time" />
@@ -133,15 +133,15 @@ const transactions: any = [
     </div>
 
     <div
-      class="flex flex-col md:flex-row md:h-40 items-center gap-4 md:gap-10 w-full md:px-10"
+      class="flex flex-col lg:flex-row lg:h-40 items-center gap-4 lg:gap-10 w-full lg:px-10"
     >
-      <div class="md:w-1/4 h-fit">
+      <div class="lg:w-1/4 h-fit">
         <VisSingleContainer class="h-40 w-full" :data="data">
           <VisDonut :value="value" />
         </VisSingleContainer>
       </div>
 
-      <ul class="flex flex-col gap-2 py-4 md:py-0 w-full">
+      <ul class="flex flex-col gap-2 py-4 lg:py-0 w-full">
         <li class="flex items-center gap-4">
           <UiBadge class="rounded-full bg-primary w-2 mx-2 p-1 h-1"></UiBadge>
           Mobile Transfer

@@ -74,7 +74,7 @@ const transactions: any = [
 </script>
 
 <template>
-  <UiCard class="col-span-1 md:p-8 p-6 gap-5 space-y-6 w-[100%]">
+  <UiCard class="col-span-1 lg:p-8 p-6 gap-5 space-y-6 w-[100%]">
     <div class="flex justify-between items-center">
       <h1 class="font-semibold text-xl">Recent Transactions</h1>
       <NuxtLink to="/transactions" class="text-primary font-medium text-base"

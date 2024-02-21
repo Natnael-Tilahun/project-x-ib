@@ -101,11 +101,11 @@ const transactions: any = [
 <template>
   <UiCard class="md:p-6 p-6 space-y-8 w-full">
     <div
-      class="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8"
+      class="flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-8"
     >
       <h1 class="font-semibold text-xl mr-auto">Transaction Flow</h1>
       <UiSelect default-value="Debit">
-        <UiSelectTrigger class="md:w-fit">
+        <UiSelectTrigger class="lg:w-fit">
           <div class="flex gap-2">
             <Icons.calender />
             <UiSelectValue placeholder="Transactions" />
@@ -120,7 +120,7 @@ const transactions: any = [
       </UiSelect>
 
       <UiSelect default-value="6">
-        <UiSelectTrigger class="md:w-fit">
+        <UiSelectTrigger class="lg:w-fit">
           <div class="flex gap-2">
             <Icons.calender />
             <UiSelectValue placeholder="Time" />

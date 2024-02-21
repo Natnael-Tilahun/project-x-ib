@@ -414,9 +414,9 @@ function printFacture() {
 </script>
 
 <template>
-  <div class="w-full md:p-8 py-8 h-full space-y-6">
+  <div class="w-full lg:p-8 py-8 h-full space-y-6">
     <UiSelect v-model="account">
-      <UiSelectTrigger class="md:w-1/3 w-full md:h-14 md:rounded-xl">
+      <UiSelectTrigger class="lg:w-1/3 md:w-1/2 w-full lg:h-14 md:rounded-xl">
         <UiSelectValue class="text-slate-400" placeholder="Select account" />
       </UiSelectTrigger>
       <UiSelectContent>
@@ -432,11 +432,11 @@ function printFacture() {
       </UiSelectContent>
     </UiSelect>
     <div class="space-y-8">
-      <div class="md:space-y-2 space-y-3">
+      <div class="lg:space-y-2 space-y-3">
         <h1 class="text-foreground text-base font-normal">
           Select Statement Duration
         </h1>
-        <div class="flex flex-col md:flex-row md:gap-24 gap-4 w-full">
+        <div class="flex flex-col md:flex-row lg:gap-24 gap-4 w-full">
           <UiPopover>
             <UiPopoverTrigger as-child>
               <UiButton
@@ -493,12 +493,12 @@ function printFacture() {
         id="facture"
         class="bg-[#FCFCFC] md:space-y-2 w-full py-4 md:px-7 px-4"
       >
-        <div class="flex flex-col md:flex-row gap-2 justify-between">
+        <div class="flex flex-col lg:flex-row gap-2 justify-between">
           <img src="/cbe-logo.png" class="md:w-fit h-fit" alt="Logo" />
-          <div class="md:space-y-2 space-y-0 flex flex-col md:items-center">
-            <h1 class="md:text-2xl text-sm">Account Statement</h1>
+          <div class="md:space-y-2 space-y-0 flex flex-col lg:items-center">
+            <h1 class="lg:text-2xl md:text-lg text-sm">Account Statement</h1>
             <div
-              class="flex items-center text-accent text-xs md:text-base gap-4 tracking-wider"
+              class="flex items-center text-accent text-xs md:text-sm lg:text-base gap-4 tracking-wider"
             >
               <p class="">
                 From :
@@ -516,7 +516,7 @@ function printFacture() {
         </div>
 
         <div
-          class="space-y-2 md:px-6 py-6 xl:w-1/3 text-xs md:text-sm md:w-1/2 w-full max-w-full"
+          class="space-y-2 lg:px-6 py-6 xl:w-1/3 text-xs md:text-sm md:w-2/3 lg:w-1/2 w-full max-w-full"
         >
           <div class="grid grid-cols-2 w-full gap-4">
             <p class="font-bold">Account Holder Name:</p>

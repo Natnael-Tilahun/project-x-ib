@@ -30,9 +30,9 @@ const handleBackButton = () => history.back();
     <div
       class="flex h-full space-y-4 md:space-y-0 flex-col w-full items-center justify-between px-10 py-5 md:p-10"
     >
-      <div class="md:space-y-8 space-y-2">
+      <div class="md:space-y-2 space-y-2">
         <img src="/cbe-logo2.png" alt="CBE Logo" />
-        <h1 class="md:text-4xl text-2xl font-medium text-center tracking-tight">
+        <h1 class="md:text-3xl text-2xl font-medium text-center tracking-tight">
           Log in
         </h1>
       </div>
@@ -45,7 +45,7 @@ const handleBackButton = () => history.back();
         <div
           class="mx-auto flex py-8 w-full md:w-full justify-center items-center space-y-6 sm:w-[350px]"
         >
-          <LoginForm class="xl:w-1/2 md:w-2/3 w-full" />
+          <LoginForm class="xl:w-1/2 md:w-5/6 lg:w-2/3 w-full" />
         </div>
 
         <div class="relative md:hidden">
@@ -60,7 +60,7 @@ const handleBackButton = () => history.back();
         </div>
 
         <div
-          class="w-fit hidden md:flex gap-2 h-full items-center justify-between flex-col"
+          class="w-fit hidden md:flex py-4 gap-8 h-96 items-center justify-between flex-col"
         >
           <Separator
             orientation="vertical"

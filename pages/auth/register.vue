@@ -32,7 +32,7 @@ const handleSuccess = () => {
 
     <!-- Body -->
     <div
-      class="flex h-full md:w-1/2 lg:w-2/5 flex-col text-center gap-10 items-center px-10 py-10 md:py-20"
+      class="flex h-full md:w-2/3 lg:w-1/2 xl:w-2/5 flex-col text-center gap-10 items-center px-10 py-10 md:py-20"
     >
       <RegisterSuccess v-if="isSuccessful" />
 

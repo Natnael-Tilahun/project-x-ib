@@ -4,22 +4,137 @@ import { Icons } from "~/components/icons";
 const LOCAL_STORAGE_THEME_KEY = "theme";
 
 const route = useRoute();
+
+const handleNavigation = (path: string) => {
+  navigateTo(path);
+};
 </script>
 
 <template>
   <div class="bg-background w-full">
     <!-- Header -->
     <div
-      class="w-full h-16 lg:h-24 bg-background text-secondary-foreground flex justify-between items-center px-4 md:px-8 lg:px-16"
+      class="w-full h-16 lg:h-20 border-b-[1px] gap-4 bg-background text-secondary-foreground flex justify-between items-center px-4 md:px-8 lg:px-16"
     >
-      <img src="/cbe-logo.png" class="w-40" alt="Logo" />
-      <ul class="md:flex hidden flex-row gap-2.5 lg:gap-8 font-semibold">
+      <!-- Mobile Menu -->
+      <UiSheet class="lg:hidden">
+        <UiSheetTrigger class="lg:hidden">
+          <Icons.menu class="w-6 h-6" />
+        </UiSheetTrigger>
+        <UiSheetContent side="left">
+          <ul
+            class="flex flex-col lg:hidden py-0 gap-6 lg:gap-8 text-[#AFAFAF] font-medium text-base"
+          >
+            <img src="/cbe-logo.png" class="w-fit" alt="Logo" />
+
+            <li
+              :class="[
+                route.path == '/'
+                  ? 'flex gap-2.5 text-base whitespace-nowrap text-primary border-l-2 border-primary'
+                  : 'flex gap-2.5 text-base  whitespace-nowrap',
+              ]"
+              class="px-4"
+              @click="handleNavigation('/')"
+            >
+              <UiSheetClose class="flex gap-2 items-center w-full">
+                <Icons.accounts class="w-4 h-4" />Home</UiSheetClose
+              >
+            </li>
+
+            <li
+              class="px-4"
+              :class="[
+                route.path == '/terms-and-tariff'
+                  ? 'flex gap-2.5 text-base whitespace-nowrap text-primary border-l-2 border-primary'
+                  : 'flex gap-2.5 text-base  whitespace-nowrap',
+              ]"
+              @click="handleNavigation('/terms-and-tariff')"
+            >
+              <UiSheetClose class="flex gap-2 items-center w-full">
+                <Icons.transactions
+                  :class="[
+                    route.path == '/terms-and-tariff'
+                      ? 'fill-primary stroke-primary'
+                      : '',
+                  ]"
+                  class="w-4 h-4"
+                />Terms and Tariff
+              </UiSheetClose>
+            </li>
+
+            <li
+              class="px-4"
+              :class="[
+                route.path == '/about'
+                  ? 'flex gap-2.5 text-base whitespace-nowrap text-primary border-l-2 border-primary'
+                  : 'flex gap-2.5 text-base  whitespace-nowrap',
+              ]"
+              @click="handleNavigation('/about')"
+            >
+              <UiSheetClose class="flex gap-2 items-center w-full">
+                <Icons.statement
+                  :class="[route.path == '/about' ? 'fill-primary' : '']"
+                  class="w-4 h-4"
+                />
+                About
+              </UiSheetClose>
+            </li>
+            <li
+              class="px-4"
+              :class="[
+                route.path == '/contact-us'
+                  ? 'flex gap-2.5 text-base whitespace-nowrap text-primary border-l-2 stroke-primary border-primary'
+                  : 'flex gap-2.5 text-base  whitespace-nowrap',
+              ]"
+              @click="handleNavigation('/contact-us')"
+            >
+              <UiSheetClose class="flex gap-2 items-center w-full">
+                <Icons.activity
+                  :class="[route.path == '/contact-us' ? 'fill-primary' : '']"
+                  class="w-4 h-4"
+                />
+                Contact Us
+              </UiSheetClose>
+            </li>
+            <UiSelect default-value="English">
+              <UiSelectTrigger class="w-full md:hidden">
+                <UiSelectValue placeholder="Language" />
+              </UiSelectTrigger>
+              <UiSelectContent>
+                <UiSelectGroup>
+                  <UiSelectItem value="English"> English </UiSelectItem>
+                  <UiSelectItem value="Amharic"> Amharic </UiSelectItem>
+                  <UiSelectItem value="Oromic"> Oromic </UiSelectItem>
+                  <UiSelectItem value="Tigray"> Tigray </UiSelectItem>
+                </UiSelectGroup>
+              </UiSelectContent>
+            </UiSelect>
+          </ul>
+        </UiSheetContent>
+      </UiSheet>
+      <img src="/cbe-logo.png" class="w-40 hidden lg:block" alt="Logo" />
+
+      <ul class="lg:flex hidden flex-row gap-2.5 lg:gap-8 font-semibold">
         <NuxtLink to="/">Home</NuxtLink>
         <NuxtLink to="/terms-and-tariff">Terms and Tariff</NuxtLink>
         <NuxtLink to="/about">About</NuxtLink>
         <NuxtLink to="/contact-us">Contact Us</NuxtLink>
       </ul>
-      <div class="flex gap-4">
+
+      <div class="flex gap-4 lg:gap-8">
+        <UiSelect default-value="English">
+          <UiSelectTrigger class="w-full hidden md:flex">
+            <UiSelectValue placeholder="Language" />
+          </UiSelectTrigger>
+          <UiSelectContent>
+            <UiSelectGroup>
+              <UiSelectItem value="English"> English </UiSelectItem>
+              <UiSelectItem value="Amharic"> Amharic </UiSelectItem>
+              <UiSelectItem value="Oromic"> Oromic </UiSelectItem>
+              <UiSelectItem value="Tigray"> Tigray </UiSelectItem>
+            </UiSelectGroup>
+          </UiSelectContent>
+        </UiSelect>
         <NuxtLink to="/auth/register">
           <UiButton class="font-bold text-foreground" variant="ghost"
             >Register</UiButton
@@ -89,6 +204,6 @@ const route = useRoute();
 </template>
 <style scoped>
 .router-link-active {
-  @apply font-light text-primary bg-popover ml-1;
+  @apply text-background p-2 rounded-lg bg-primary;
 }
 </style>

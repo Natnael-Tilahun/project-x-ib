@@ -14,7 +14,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Project X Backend",
+      title: "Project X IB",
       link: [],
     },
   },

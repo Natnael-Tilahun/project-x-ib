@@ -4,7 +4,6 @@ import { Icons } from "~/components/icons";
 const LOCAL_STORAGE_THEME_KEY = "theme";
 
 const route = useRoute();
-console.log("route: ", route);
 
 const handleNavigation = (path: string) => {
   navigateTo(path);
@@ -17,12 +16,12 @@ const handleNavigation = (path: string) => {
     <div
       class="w-full h-16 lg:h-20 border-b-[1px] bg-background text-secondary-foreground gap-6 flex justify-between items-center px-6 md:px-8 lg:px-16"
     >
-      <img src="/cbe-logo.png" class="w-40 hidden md:block" alt="Logo" />
+      <img src="/cbe-logo.png" class="w-40 hidden lg:block" alt="Logo" />
 
       <!-- Mobile Menu -->
-      <UiSheet class="md:hidden">
+      <UiSheet class="lg:hidden">
         <UiSheetTrigger>
-          <Icons.menu class="w-6 h-6 md:hidden" />
+          <Icons.menu class="w-6 h-6 lg:hidden" />
         </UiSheetTrigger>
         <UiSheetContent side="left">
           <ul
@@ -100,7 +99,7 @@ const handleNavigation = (path: string) => {
               </UiSheetClose>
             </li>
             <UiSelect default-value="English">
-              <UiSelectTrigger class="w-full">
+              <UiSelectTrigger class="w-full md:hidden">
                 <UiSelectValue placeholder="Language" />
               </UiSelectTrigger>
               <UiSelectContent>
@@ -118,7 +117,7 @@ const handleNavigation = (path: string) => {
 
       <!-- Large Screen Menu -->
       <ul
-        class="md:flex hidden flex-row gap-2.5 lg:gap-8 text-[#AFAFAF] font-medium text-base"
+        class="lg:flex hidden flex-row gap-2.5 lg:gap-8 text-[#AFAFAF] font-medium text-base"
       >
         <NuxtLink class="flex gap-2 items-center" to="/accounts"
           ><Icons.accounts class="w-4 h-4" /> Accounts</NuxtLink
@@ -168,7 +167,7 @@ const handleNavigation = (path: string) => {
     </div>
 
     <!-- Page Main Content -->
-    <div class="space-y-10 h-full md:py-8 px-6 md:px-8 lg:px-16">
+    <div class="space-y-10 h-full md:py-8 px-6 md:px-4 lg:px-16">
       <slot />
     </div>
 

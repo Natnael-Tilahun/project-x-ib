@@ -121,24 +121,24 @@ watchOnce(api, (api) => {
 
 <template>
   <div
-    class="w-full col-span-1 h-fit bg-[url('/backgroundMap.png')] bg-center p-8 md:p-0"
+    class="w-full col-span-1 h-fit bg-[url('/backgroundMap.png')] bg-center p-8 lg:p-0"
   >
     <UiCarousel class="w-full flex" @init-api="setApi">
       <UiCarouselContent>
         <!-- Iterate over accounts array -->
         <UiCarouselItem
-          class="md:h-96 flex flex-col md:items-center h-60 justify-center md:p-6"
+          class="lg:h-96 flex flex-col md:items-center h-60 justify-center lg:p-6"
           v-for="(account, index) in accounts"
           :key="index"
         >
-          <div class="md:space-y-16 space-y-10">
+          <div class="lg:space-y-16 space-y-10">
             <div class="flex flex-col gap-2 justify-center items-center">
-              <h1 class="md:text-2xl text-lg font-semibold text-foreground">
+              <h1 class="lg:text-2xl text-lg font-semibold text-foreground">
                 Selected Account
               </h1>
-              <div class="text-center items-center flex gap-4 md:gap-16">
+              <div class="text-center items-center flex gap-4 lg:gap-16">
                 <h1
-                  class="md:text-2xl text-lg text-primary font-semibold tracking-wide"
+                  class="lg:text-2xl text-lg text-primary font-semibold tracking-wide"
                 >
                   {{ account.productId }} -
                   {{ formatAccountNumber(account.accountId) }}
@@ -151,13 +151,13 @@ watchOnce(api, (api) => {
               </div>
             </div>
 
-            <div class="flex w-full gap-4 md:gap-20">
+            <div class="flex w-full gap-4 md:gap-8 lg:gap-20">
               <div class="md:space-y-1">
-                <p class="md:text-base text-sm font-semibold text-accent">
+                <p class="lg:text-base text-sm font-semibold text-accent">
                   Available Balance
                 </p>
-                <div class="flex items-center gap-4 md:gap-10">
-                  <p class="md:text-xl text-base font-semibold">
+                <div class="flex items-center gap-4 lg:gap-10">
+                  <p class="lg:text-xl text-base font-semibold">
                     {{
                       formatAvailableBalance(
                         account.availableBalance,
@@ -183,11 +183,11 @@ watchOnce(api, (api) => {
               />
 
               <div class="md:space-y-1">
-                <p class="md:text-base text-sm font-semibold text-accent">
+                <p class="lg:text-base text-sm font-semibold text-accent">
                   Locked Amount
                 </p>
-                <div class="flex items-center gap-4 md:gap-10">
-                  <p class="md:text-xl text-base font-semibold">
+                <div class="flex items-center gap-4 lg:gap-10">
+                  <p class="lg:text-xl text-base font-semibold">
                     {{
                       formatAvailableBalance(
                         account.currentBalance,
