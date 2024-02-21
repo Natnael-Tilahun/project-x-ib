@@ -13,7 +13,7 @@ const handleBackButton = () => history.back();
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col items-center justify-center">
+  <div class="h-full flex flex-col items-center justify-center">
     <!-- Header -->
     <div
       class="w-full h-16 border-b-[1px] flex items-center justify-between px-8"

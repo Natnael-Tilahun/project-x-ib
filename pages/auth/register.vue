@@ -22,7 +22,7 @@ const handleSuccess = () => {
   <div class="h-screen flex flex-col items-center justify-center">
     <!-- Header -->
     <div
-      class="w-full h-20 border-b-[1px] flex items-center justify-between px-8"
+      class="w-full h-16 border-b-[1px] flex items-center justify-between px-8"
     >
       <NuxtLink @click="handleBackButton" class="flex gap-2 text-base"
         ><Icons.leftArrow /> Back
