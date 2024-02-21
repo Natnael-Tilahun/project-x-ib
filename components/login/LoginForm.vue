@@ -11,12 +11,17 @@ import {
 } from "@/components/ui/form";
 import { customerLoginFormSchema } from "~/validations/customerLoginFormSchema";
 import { useForm } from "vee-validate";
+import { Icons } from "../icons";
 const store = useAuthStore();
 
 const isLoading = ref(false);
 
 const form = useForm();
+let showPassword = ref(false);
 
+const togglePasswordVisibility = () => {
+  showPassword.value = !showPassword.value;
+};
 const onSubmit = form.handleSubmit(async (values: any) => {
   isLoading.value = true;
 
@@ -58,12 +63,28 @@ const onSubmit = form.handleSubmit(async (values: any) => {
           <FormItem>
             <FormLabel>Password</FormLabel>
             <FormControl>
-              <UiInput
-                type="text"
-                placeholder="******"
-                v-bind="componentField"
-                :disabled="isLoading"
-              />
+              <div
+                className="relative flex items-center bg-input rounded-lg pl- focus-within:ring-1 focus-within:ring-primary"
+              >
+                <UiInput
+                  :type="[showPassword ? 'text' : 'password']"
+                  placeholder="******"
+                  v-bind="componentField"
+                  :disabled="isLoading"
+                />
+
+                <Icons.hide
+                  v-if="showPassword"
+                  class="absolute flex right-0 pr-3 items-center w-8 h-8"
+                  @Click="togglePasswordVisibility"
+                />
+
+                <Icons.view
+                  v-else
+                  class="absolute flex right-0 pr-3 items-center w-8 h-8"
+                  @Click="togglePasswordVisibility"
+                />
+              </div>
             </FormControl>
             <FormMessage />
           </FormItem>

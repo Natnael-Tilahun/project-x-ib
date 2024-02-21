@@ -96,7 +96,7 @@ async function getData(): Promise<AccountData[]> {
           transactionDate: "Apr 12,2023",
           transactionCurrency: "Birr",
           serviceCharge: "10",
-          details: "Transfer from Telebirr",
+          details: "Transfer from CBEBirr",
           txnType: "Mobile Money Txn",
         },
         {
@@ -115,7 +115,7 @@ async function getData(): Promise<AccountData[]> {
           transactionDate: "Apr 12,2023",
           transactionCurrency: "Birr",
           serviceCharge: "10",
-          details: "Transfer from Telebirr",
+          details: "Transfer from CBEBirr",
           txnType: "Mobile Money Txn",
         },
         {
@@ -134,7 +134,7 @@ async function getData(): Promise<AccountData[]> {
           transactionDate: "Apr 14,2023",
           transactionCurrency: "Birr",
           serviceCharge: "10",
-          details: "Transfer from Telebirr",
+          details: "Transfer from CBEBirr",
           txnType: "Mobile Money Txn",
         },
         {
@@ -153,7 +153,7 @@ async function getData(): Promise<AccountData[]> {
           transactionDate: "Apr 20,2023",
           transactionCurrency: "Birr",
           serviceCharge: "10",
-          details: "Transfer from Telebirr",
+          details: "Transfer from CBEBirr",
           txnType: "Mobile Money Txn",
         },
       ],
@@ -193,7 +193,7 @@ async function getData(): Promise<AccountData[]> {
           transactionDate: "Apr 1,2023",
           transactionCurrency: "Birr",
           serviceCharge: "10",
-          details: "Transfer from Telebirr",
+          details: "Transfer from CBEBirr",
           txnType: "Mobile Money Txn",
         },
         {
@@ -212,7 +212,7 @@ async function getData(): Promise<AccountData[]> {
           transactionDate: "Apr 2,2023",
           transactionCurrency: "Birr",
           serviceCharge: "10",
-          details: "Transfer from Telebirr",
+          details: "Transfer from CBEBirr",
           txnType: "Mobile Money Txn",
         },
         {
@@ -231,7 +231,7 @@ async function getData(): Promise<AccountData[]> {
           transactionDate: "Apr 14,2023",
           transactionCurrency: "Birr",
           serviceCharge: "10",
-          details: "Transfer from Telebirr",
+          details: "Transfer from CBEBirr",
           txnType: "Mobile Money Txn",
         },
         {
@@ -250,7 +250,7 @@ async function getData(): Promise<AccountData[]> {
           transactionDate: "Apr 20,2023",
           transactionCurrency: "Birr",
           serviceCharge: "10",
-          details: "Transfer from Telebirr",
+          details: "Transfer from CBEBirr",
           txnType: "Mobile Money Txn",
         },
       ],
@@ -291,7 +291,7 @@ async function getData(): Promise<AccountData[]> {
           transactionDate: "Apr 12,2023",
           transactionCurrency: "Birr",
           serviceCharge: "10",
-          details: "Transfer from Telebirr",
+          details: "Transfer from CBEBirr",
           txnType: "Mobile Money Txn",
         },
         {
@@ -310,7 +310,7 @@ async function getData(): Promise<AccountData[]> {
           transactionDate: "Apr 12,2023",
           transactionCurrency: "Birr",
           serviceCharge: "10",
-          details: "Transfer from Telebirr",
+          details: "Transfer from CBEBirr",
           txnType: "Mobile Money Txn",
         },
         {
@@ -329,7 +329,7 @@ async function getData(): Promise<AccountData[]> {
           transactionDate: "Apr 14,2023",
           transactionCurrency: "Birr",
           serviceCharge: "10",
-          details: "Transfer from Telebirr",
+          details: "Transfer from CBEBirr",
           txnType: "Mobile Money Txn",
         },
         {
@@ -348,7 +348,7 @@ async function getData(): Promise<AccountData[]> {
           transactionDate: "Apr 20,2023",
           transactionCurrency: "Birr",
           serviceCharge: "10",
-          details: "Transfer from Telebirr",
+          details: "Transfer from CBEBirr",
           txnType: "Mobile Money Txn",
         },
       ],

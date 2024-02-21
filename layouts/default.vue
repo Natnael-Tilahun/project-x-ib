@@ -116,7 +116,9 @@ const handleNavigation = (path: string) => {
 
       <ul class="lg:flex hidden flex-row gap-2.5 lg:gap-8 font-semibold">
         <NuxtLink to="/">Home</NuxtLink>
-        <NuxtLink to="/terms-and-tariff">Terms and Tariff</NuxtLink>
+        <NuxtLink to="https://combanketh.et/en/terms-and-tariff" target="_blank"
+          >Terms and Tariff</NuxtLink
+        >
         <NuxtLink to="/about">About</NuxtLink>
         <NuxtLink to="/contact-us">Contact Us</NuxtLink>
       </ul>
