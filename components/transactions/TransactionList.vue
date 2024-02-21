@@ -74,7 +74,7 @@ const transactions: any = [
 </script>
 
 <template>
-  <div class="space-y-14 w-full">
+  <div class="md:space-y-14 space-y-6 w-full">
     <div class="flex md:w-2/3 items-center self-start gap-6">
       <UiInput placeholder="Search here" class="h-10 w-full bg-white" />
       <Icons.filter />
@@ -90,9 +90,11 @@ const transactions: any = [
         v-if="transaction.typeId == 'Deposit'"
         :value="transaction.id"
       >
-        <UiAccordionTrigger class="flex items-center gap-8">
+        <UiAccordionTrigger
+          class="flex items-center md:gap-8 gap-4 hover:no-underline"
+        >
           <Icons.deposit class="w-14 h-14 border-none stroke-none" />
-          <div class="flex flex-col gap-1 mr-auto text-left">
+          <div class="flex flex-col md:gap-1 mr-auto text-left">
             <h1 class="text-[#2DD683] font-bold text-lg">
               {{ transaction.depositAmount }}
               {{ transaction.transactionCurrency }}
@@ -106,33 +108,33 @@ const transactions: any = [
           </p>
         </UiAccordionTrigger>
         <UiAccordionContent
-          class="md:px-16 px-8 py-8 w-full shadow-md rounded-xl border-b-0"
+          class="md:px-16 px-4 md:py-8 py-6 w-full shadow-md rounded-xl border-b-0"
         >
           <div
             class="flex flex-col md:flex-row items-center gap-4 justify-between w-full"
           >
-            <ul class="space-y-4 w-full">
-              <li class="grid grid-cols-2 md:w-[65%] w-full gap-8">
+            <ul class="ms:space-y-4 space-y-2 w-full text-xs md:text-sm">
+              <li class="grid grid-cols-2 md:w-[65%] w-full md:gap-8 gap-4">
                 <h1 class="font-bold">Transaction Type:</h1>
                 <p>Mobile Money TXN</p>
               </li>
-              <li class="grid grid-cols-2 md:w-[65%] w-full gap-8">
+              <li class="grid grid-cols-2 md:w-[65%] w-full md:gap-8 gap-4">
                 <h1 class="font-bold">Transaction ID:</h1>
                 <p>FT2405456M9D2</p>
               </li>
-              <li class="grid grid-cols-2 md:w-[65%] w-full gap-8">
+              <li class="grid grid-cols-2 md:w-[65%] w-full md:gap-8 gap-4">
                 <h1 class="font-bold">Done Via:</h1>
                 <p>Transfer Done Via Branch</p>
               </li>
-              <li class="grid grid-cols-2 md:w-[65%] w-full gap-8">
+              <li class="grid grid-cols-2 md:w-[65%] w-full md:gap-8 gap-4">
                 <h1 class="font-bold">Transferred From:</h1>
                 <p>Txn FT2405456M9D2</p>
               </li>
-              <li class="grid grid-cols-2 md:w-[65%] w-full gap-8">
+              <li class="grid grid-cols-2 md:w-[65%] w-full md:gap-8 gap-4">
                 <h1 class="font-bold">Transfer Amount:</h1>
                 <p>28,000.00 Birr</p>
               </li>
-              <li class="grid grid-cols-2 md:w-[65%] w-full gap-8">
+              <li class="grid grid-cols-2 md:w-[65%] w-full md:gap-8 gap-4">
                 <h1 class="font-bold">Commission:</h1>
                 <p>0.00 Birr</p>
               </li>

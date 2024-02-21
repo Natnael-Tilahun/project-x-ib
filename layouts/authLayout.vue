@@ -4,6 +4,11 @@ import { Icons } from "~/components/icons";
 const LOCAL_STORAGE_THEME_KEY = "theme";
 
 const route = useRoute();
+console.log("route: ", route);
+
+const handleNavigation = (path: string) => {
+  navigateTo(path);
+};
 </script>
 
 <template>
@@ -25,18 +30,75 @@ const route = useRoute();
           >
             <img src="/cbe-logo.png" class="w-fit" alt="Logo" />
 
-            <NuxtLink class="flex gap-2 items-center w-full" to="/accounts"
-              ><Icons.accounts class="w-4 h-4" /> Accounts</NuxtLink
+            <li
+              :class="[
+                route.path == '/accounts'
+                  ? 'flex gap-2.5 text-base whitespace-nowrap text-primary border-l-2 border-primary'
+                  : 'flex gap-2.5 text-base  whitespace-nowrap',
+              ]"
+              class="px-4"
+              @click="handleNavigation('/accounts')"
             >
-            <NuxtLink class="flex gap-2 items-center w-full" to="/transactions">
-              <Icons.transactions class="w-4 h-4" /> Transactions</NuxtLink
+              <UiSheetClose class="flex gap-2 items-center w-full">
+                <Icons.accounts class="w-4 h-4" />Accounts</UiSheetClose
+              >
+            </li>
+
+            <li
+              class="px-4"
+              :class="[
+                route.path == '/transactions'
+                  ? 'flex gap-2.5 text-base whitespace-nowrap text-primary border-l-2 border-primary'
+                  : 'flex gap-2.5 text-base  whitespace-nowrap',
+              ]"
+              @click="handleNavigation('/transactions')"
             >
-            <NuxtLink class="flex gap-2 items-center w-full" to="/statement"
-              ><Icons.statement class="w-4 h-4" /> Statement</NuxtLink
+              <UiSheetClose class="flex gap-2 items-center w-full">
+                <Icons.transactions
+                  :class="[
+                    route.path == '/transactions'
+                      ? 'fill-primary stroke-primary'
+                      : '',
+                  ]"
+                  class="w-4 h-4"
+                />Transactions
+              </UiSheetClose>
+            </li>
+
+            <li
+              class="px-4"
+              :class="[
+                route.path == '/statement'
+                  ? 'flex gap-2.5 text-base whitespace-nowrap text-primary border-l-2 border-primary'
+                  : 'flex gap-2.5 text-base  whitespace-nowrap',
+              ]"
+              @click="handleNavigation('/statement')"
             >
-            <NuxtLink class="flex gap-2 items-center w-full" to="/activity">
-              <Icons.activity class="w-4 h-4" /> Activity</NuxtLink
+              <UiSheetClose class="flex gap-2 items-center w-full">
+                <Icons.statement
+                  :class="[route.path == '/statement' ? 'fill-primary' : '']"
+                  class="w-4 h-4"
+                />
+                Statement
+              </UiSheetClose>
+            </li>
+            <li
+              class="px-4"
+              :class="[
+                route.path == '#'
+                  ? 'flex gap-2.5 text-base whitespace-nowrap text-primary border-l-2 stroke-primary border-primary'
+                  : 'flex gap-2.5 text-base  whitespace-nowrap',
+              ]"
+              @click="handleNavigation('#')"
             >
+              <UiSheetClose class="flex gap-2 items-center w-full">
+                <Icons.activity
+                  :class="[route.path == '/#' ? 'fill-primary' : '']"
+                  class="w-4 h-4"
+                />
+                Activity
+              </UiSheetClose>
+            </li>
             <UiSelect default-value="English">
               <UiSelectTrigger class="w-full">
                 <UiSelectValue placeholder="Language" />
@@ -106,7 +168,7 @@ const route = useRoute();
     </div>
 
     <!-- Page Main Content -->
-    <div class="space-y-10 h-full md:py-8 px-4 md:px-8 lg:px-16">
+    <div class="space-y-10 h-full md:py-8 px-6 md:px-8 lg:px-16">
       <slot />
     </div>
 
